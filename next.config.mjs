@@ -1,12 +1,11 @@
 /** @type {import('next').NextConfig} */
 const isProd = process.env.GITHUB_PAGES === 'true';
-const repo = process.env.NEXT_PUBLIC_REPO_NAME; // e.g. "cemaksoy.github.io" or project repo name
+const repo = process.env.NEXT_PUBLIC_REPO_NAME; // proje-sitesi için repo adı, user-sitesi için boş
 
 export default {
-  output: 'export',              // enables `next export` for static HTML (GitHub Pages friendly)
+  output: 'export',              // GitHub Pages için statik export
   trailingSlash: true,
-  images: { unoptimized: true }, // no Image Optimization on static hosting
+  images: { unoptimized: true }, // Pages'de image optimizer yok
   basePath: isProd && repo ? `/${repo}` : undefined,
   assetPrefix: isProd && repo ? `/${repo}/` : undefined,
-  // If using <Image>, disable or switch to <img> to avoid remote patterns when exporting.
 };
