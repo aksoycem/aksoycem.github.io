@@ -28,14 +28,20 @@ jobs:
           cache: "npm"
 
       - name: Install deps
-        run: npm ci
+        run: npm install
 
-      - name: Build (next export)
+      - name: Build (next export) for USER SITE
         env:
-          # User site olduğu için basePath istemiyoruz:
+          # User-site: basePath/assetPrefix YOK
           GITHUB_PAGES: "false"
           NEXT_PUBLIC_REPO_NAME: ""
-        run: npm run build
+        run: npm run build   # package.json: "build": "next build && next export"
+
+      - name: Write CNAME & .nojekyll
+        run: |
+          mkdir -p out
+          echo "cemaksoy.net" > out/CNAME
+          touch out/.nojekyll
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
