@@ -1,0 +1,27 @@
+{
+  "name": "cem-aksoy-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build && next export",
+    "export": "next export",
+    "preview": "npx serve out",
+    "deploy:gh": "npm run build && npx gh-pages -d out -t true",
+    "deploy:docs": "npm run build && node scripts/copy-out-to-docs.mjs",
+    "postexport": "node scripts/postexport-cname.mjs"
+  },
+  "dependencies": {
+    "next": "14.2.5",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "framer-motion": "11.2.10"
+  },
+  "devDependencies": {
+    "autoprefixer": "10.4.19",
+    "postcss": "8.4.41",
+    "tailwindcss": "3.4.10",
+    "gh-pages": "6.1.1",
+    "serve": "14.2.3"
+  }
+}
