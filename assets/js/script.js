@@ -35,4 +35,21 @@ document.addEventListener('DOMContentLoaded', () => {
   revealElements.forEach(element => {
     revealObserver.observe(element);
   });
+
+  // Dil seçici için basit aktif sınıf değiştirici
+  const langButtons = document.querySelectorAll('.language-selector .lang');
+  if (langButtons.length > 0) {
+    // Varsayılan dil: İngilizce
+    document.documentElement.lang = 'en';
+    langButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        langButtons.forEach(el => el.classList.remove('active'));
+        btn.classList.add('active');
+        // Seçilen dile göre html lang özniteliğini güncelle
+        const selectedLang = btn.classList.contains('en') ? 'en' : 'tr';
+        document.documentElement.lang = selectedLang;
+        // Gelecekte çoklu dil desteği eklenecekse burada yönlendirme yapılabilir
+      });
+    });
+  }
 });
