@@ -4,13 +4,14 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Cem Aksoy’un resmi kişisel web sitesi. Girişimci ruhu, inovasyona olan tutkusu ve insan odaklı yaklaşımıyla dikkat çeken bir yazılım mühendisi hakkında detaylı bilgi edinin.">
-  <title>Cem Aksoy – Teknoloji, İnovasyon ve İnsan Odaklı Bir Yolculuk</title>
+  <!-- Sayfa açıklaması -->
+  <meta name="description" content="Cem Aksoy’un kişisel web sitesi. İnovasyon ve insan odaklı yaklaşımıyla dikkat çeken bir yazılım mühendisi adayı hakkında detaylı bilgi edinin.">
+  <title>Cem Aksoy – Kişisel Site</title>
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-  <!-- Stylesheet -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Özel stil dosyası -->
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
@@ -18,49 +19,51 @@
   <header>
     <div class="container header-inner">
       <div class="branding">
-        <span class="logo-icon">CA</span>
+        <!-- Logo icon now displays my portrait -->
+        <span class="logo-icon"></span>
         <div class="branding-text">
           <span class="site-title">Cem Aksoy</span>
-          <span class="tagline">Girişimci, inovatif ve insan odaklı</span>
+        <span class="tagline" data-i18n="tagline">Girişimci, inovatif ve insan odaklı</span>
         </div>
       </div>
       <nav id="navbar">
         <ul>
-          <li><a href="#about">Hakkımda</a></li>
-          <li><a href="#projects">Projeler</a></li>
-          <li><a href="#experience">Deneyimler</a></li>
-          <li><a href="#skills">Beceriler</a></li>
-          <li><a href="#values">Değerler</a></li>
-          <li><a href="#vision">Vizyon</a></li>
-          <li><a href="#blog">Blog</a></li>
-          <li><a href="#contact">İletişim</a></li>
+          <li><a href="#about" data-i18n="navAbout">Hakkımda</a></li>
+          <li><a href="#projects" data-i18n="navProjects">Projeler</a></li>
+          <li><a href="#experience" data-i18n="navExperience">Deneyimler</a></li>
+          <li><a href="#skills" data-i18n="navSkills">Beceriler</a></li>
+          <li><a href="#values" data-i18n="navValues">Değerler</a></li>
+          <li><a href="#vision" data-i18n="navVision">Vizyon</a></li>
+          <li><a href="#blog" data-i18n="navBlog">Blog</a></li>
+          <li><a href="#gallery" data-i18n="navGallery">Galeri</a></li>
+          <li><a href="#contact" data-i18n="navContact">İletişim</a></li>
         </ul>
       </nav>
-      <!-- Dil seçici: varsayılan olarak İngilizce seçili. Bayrak emojileri ile dillerin kısaltmaları gösterilir. -->
+      <!-- Dil seçici -->
       <div class="language-selector">
-        <span class="lang en active">🇬🇧 EN</span>
+        <span class="lang en active">EN</span>
         |
-        <span class="lang tr">🇹🇷 TR</span>
+        <span class="lang tr">TR</span>
       </div>
       <div class="menu-toggle" id="mobile-menu">
-        <span></span>
-        <span></span>
-        <span></span>
+        <span></span><span></span><span></span>
       </div>
     </div>
   </header>
 
-  <!-- Karşılama bölümü: portre ve kısa giriş -->
+  <!-- Karşılama bölümü -->
   <section id="hero" class="reveal">
     <div class="container hero-container">
       <div class="hero-image">
-        <!-- Profil fotoğrafı depo kök dizininde yer alan dubai cool foto.JPG dosyasından alınır -->
-        <img src="dubai cool foto.JPG" alt="Cem Aksoy portre fotoğrafı">
+        <!-- Dubai fotoğrafım hero bölümünde gösteriliyor -->
+        <img src="https://raw.githubusercontent.com/aksoycem/aksoycem.github.io/main/dubai%20cool%20foto.JPG" alt="Dubai fotoğrafı">
       </div>
       <div class="hero-text">
-        <h1>Merhaba, ben Cem Aksoy</h1>
-        <p>İnsan odaklı yaklaşımıyla yenilikçi projeler geliştiren genç bir yazılım mühendisi adayıyım. Teknolojiyi insanlarla buluştururken sürdürülebilirliği ve yaratıcılığı merkeze koyarım.</p>
-        <a href="#about" class="btn">Beni Tanıyın</a>
+        <h1 data-i18n="heroTitle">Merhaba, ben Cem Aksoy</h1>
+        <!-- Küçük yuvarlak Dubai fotoğrafı h1'in sonunda yer alıyor -->
+        <img class="tagline-icon" src="https://raw.githubusercontent.com/aksoycem/aksoycem.github.io/main/dubai%20cool%20foto.JPG" alt="Dubai fotoğrafı" />
+        <p data-i18n="heroSubtitle">İnsan odaklı yaklaşımıyla yenilikçi projeler geliştiren genç bir yazılım mühendisi adayıyım. Teknolojiyi insanlarla buluştururken sürdürülebilirliği ve yaratıcılığı merkeze koyarım.</p>
+        <a href="#about" class="btn" data-i18n="btnAbout">Beni Tanıyın</a>
       </div>
     </div>
   </section>
@@ -68,29 +71,25 @@
   <!-- Hakkımda bölümü -->
   <section id="about" class="section reveal">
     <div class="container">
-      <h2>Hakkımda</h2>
-      <p>Ben Cem Aksoy. Bahçeşehir Üniversitesi Yazılım Mühendisliği 3. sınıf öğrencisiyim. Hayatımın merkezinde her zaman teknolojiye olan merakım, insanlarla kurduğum güçlü bağlar ve yeni fikirleri gerçeğe dönüştürme isteğim oldu.</p>
-      <h3>Küçüklükten Gelen Merak</h3>
-      <p>Teknolojiyle ilişkim çocuk yaşlarda başladı. 8 yaşımda bilgisayar dünyasına adım attım. 10 yaşımda, sadece bir HDMI kablosunu PS3’e bağlamak gibi basit bir merak, beni cihazların nasıl çalıştığını anlamaya yönlendirdi. 12 yaşımda kendi IP yapılanmamı ve yerel ağımı kurmaya başladım. Amacım sadece Minecraft oynamaktı, ama bu süreç bana ağ yönetimi, problem çözme ve araştırma gibi temel yetkinlikleri kazandırdı. O günden beri teknoloji benim için sadece bir araç değil, dünyayı keşfetme ve üretme şeklim oldu.</p>
+      <h2 data-i18n="aboutHeading">Hakkımda</h2>
+      <p data-i18n="aboutPara1">Ben Cem Aksoy. Bahçeşehir Üniversitesi Yazılım Mühendisliği 3. sınıf öğrencisiyim. Hayatımın merkezinde her zaman teknolojiye olan merakım, insanlarla kurduğum güçlü bağlar ve yeni fikirleri gerçeğe dönüştürme isteğim oldu.</p>
+      <h3 data-i18n="aboutHeading2">Küçüklükten Gelen Merak</h3>
+      <p data-i18n="aboutPara2">Teknolojiyle ilişkim çocuk yaşlarda başladı. 8 yaşımda bilgisayar dünyasına adım attım. 10 yaşımda, sadece bir HDMI kablosunu PS3’e bağlamak gibi basit bir merak, beni cihazların nasıl çalıştığını anlamaya yönlendirdi. 12 yaşımda kendi IP yapılanmamı ve yerel ağımı kurmaya başladım. O günden beri teknoloji benim için sadece bir araç değil, dünyayı keşfetme ve üretme şeklim oldu.</p>
     </div>
   </section>
 
   <!-- Projeler -->
-  <section id="projects" class="section alternate reveal">
+  <section id="projects" class="section reveal">
     <div class="container">
-      <h2>Projeler</h2>
+      <h2 data-i18n="projectsHeading">Projeler</h2>
       <div class="projects-grid">
         <div class="project-card">
-          <h3>WeShape &amp; reSort</h3>
-          <p>2024’te Prof. Melih Elidüzgün ile geliştirdiğimiz sürdürülebilirlik odaklı iş fikrimiz ve bu fikirden doğan akıllı ayrıştırma sistemi reSort, Katalist ve CIFE iş birliğiyle gerçekleşen 4 aylık girişimcilik programında Central European Institute on Sustainability and Innovation desteği aldı. Program tamamlandı ve proje fazı sonlandı.</p>
+          <h3 data-i18n="project1Title">WeShape &amp; reSort</h3>
+          <p data-i18n="project1Desc">2024’te Prof. Melih Elidüzgün ile geliştirdiğimiz sürdürülebilirlik odaklı iş fikrimiz ve bu fikirden doğan akıllı ayrıştırma sistemi reSort, Katalist ve CIFE iş birliğiyle gerçekleşen 4 aylık girişimcilik programında destek aldı.</p>
         </div>
         <div class="project-card">
-          <h3>Kidu</h3>
-          <p>200.000 $ yatırım almış bir start‑up’ta IT ve daha sonra Business Analyst olarak görev aldım. Python, Tableau, SQL ve JIRA gibi araçlarla hem teknik hem iş analizi becerilerimi geliştirdim.</p>
-        </div>
-        <div class="project-card">
-          <h3>IAESTE BAU</h3>
-          <p>Yönetim kurulu üyesi olarak şube kuruluş sürecinde görev aldım, sponsorluklar sağladım ve uluslararası değişim programlarını destekleyen etkinlikler düzenledim.</p>
+          <h3 data-i18n="project2Title">IAESTE BAU</h3>
+          <p data-i18n="project2Desc">Yönetim kurulu üyesi olarak şube kuruluş sürecinde görev aldım, sponsorluklar sağladım ve uluslararası değişim programlarını destekleyen etkinlikler düzenledim.</p>
         </div>
       </div>
     </div>
@@ -99,15 +98,20 @@
   <!-- İş Deneyimleri -->
   <section id="experience" class="section reveal">
     <div class="container">
-      <h2>Deneyimler</h2>
+      <h2 data-i18n="experienceHeading">Deneyimler</h2>
       <div class="experiences-grid">
         <div class="experience-card">
-          <h3>Innovation &amp; Management Intern – Türkon Line (2024–Günümüz)</h3>
-          <p>İnovasyon projelerine katkı sağlıyor, Power Apps ve Power Automate çözümleri geliştiriyor, Visio ile süreç akışları tasarlıyorum. ISO 56001 standartlarına uygun süreç iyileştirme projeleri yürütüyor ve dijital dönüşümün insan odaklı yanını öğreniyorum.</p>
+          <h3 data-i18n="exp1Title">Innovation &amp; Management Intern – Türkon Line (2024–Günümüz)</h3>
+          <p data-i18n="exp1Desc">İnovasyon projelerine katkı sağlıyor, Power Apps ve Power Automate çözümleri geliştiriyor, Visio ile süreç akışları tasarlıyorum. ISO 56001 standartlarına uygun süreç iyileştirme projeleri yürütüyor ve dijital dönüşümün insan odaklı yanını öğreniyorum.</p>
         </div>
         <div class="experience-card">
-          <h3>Beşiktaş JK – VIP Operasyon (2019–2022)</h3>
-          <p>3 yıl boyunca VIP operasyon ve araç koordinasyonu yaparak, yüksek tempolu organizasyon yönetimi ve prestijli protokol süreçlerinde deneyim kazandım.</p>
+          <h3 data-i18n="exp2Title">Beşiktaş JK – VIP Operasyon (2019–2022)</h3>
+          <p data-i18n="exp2Desc">3 yıl boyunca VIP operasyon ve araç koordinasyonu yaparak, yüksek tempolu organizasyon yönetimi ve prestijli protokol süreçlerinde deneyim kazandım.</p>
+        </div>
+        <!-- Kidoo deneyimi proje kartından taşındı -->
+        <div class="experience-card">
+          <h3 data-i18n="expKidooTitle">Kidoo – IT ve İş Analisti</h3>
+          <p data-i18n="expKidooDesc">200.000 $ yatırım almış bir start‑up’ta IT ve Business Analyst olarak görev aldım. Python, Tableau, SQL ve JIRA gibi araçlarla hem teknik hem iş analizi becerilerimi geliştirdim.</p>
         </div>
       </div>
     </div>
@@ -116,10 +120,10 @@
   <!-- Beceriler -->
   <section id="skills" class="section reveal">
     <div class="container">
-      <h2>Becerilerim</h2>
+      <h2 data-i18n="skillsHeading">Becerilerim</h2>
       <div class="skills-grid">
         <div class="skill-category">
-          <h3>Teknoloji &amp; Araçlar</h3>
+          <h3 data-i18n="skillsCat1">Teknoloji &amp; Araçlar</h3>
           <ul>
             <li>Excel (ileri seviye), Visio (ileri seviye)</li>
             <li>Power Apps (Maker), Power Automate</li>
@@ -129,7 +133,7 @@
           </ul>
         </div>
         <div class="skill-category">
-          <h3>Analiz &amp; Yönetim</h3>
+          <h3 data-i18n="skillsCat2">Analiz &amp; Yönetim</h3>
           <ul>
             <li>İş süreçleri analizi</li>
             <li>Proje yönetimi</li>
@@ -138,7 +142,7 @@
           </ul>
         </div>
         <div class="skill-category">
-          <h3>İletişim &amp; Liderlik</h3>
+          <h3 data-i18n="skillsCat3">İletişim &amp; Liderlik</h3>
           <ul>
             <li>Farklı kültürlerden insanlarla ekip çalışması</li>
             <li>Etkin sunum ve iletişim</li>
@@ -151,25 +155,25 @@
   </section>
 
   <!-- Beni Tanımlayan Özellikler -->
-  <section id="values" class="section alternate reveal">
+  <section id="values" class="section reveal">
     <div class="container">
-      <h2>Beni Tanımlayan Özellikler</h2>
+      <h2 data-i18n="valuesHeading">Beni Tanımlayan Özellikler</h2>
       <div class="values-grid">
         <div class="value-card">
-          <h3>Meraklı</h3>
-          <p>Küçüklüğümden beri teknolojiyi kurcalayan, “Nasıl çalışıyor?” sorusunu sormadan duramayan bir yapım var.</p>
+          <h3 data-i18n="value1Title">Meraklı</h3>
+          <p data-i18n="value1Desc">Küçüklüğümden beri teknolojiyi kurcalayan, “Nasıl çalışıyor?” sorusunu sormadan duramayan bir yapım var.</p>
         </div>
         <div class="value-card">
-          <h3>İnsan Odaklı</h3>
-          <p>Teknoloji ne kadar önemli olursa olsun, asıl gücün insan ilişkilerinden geldiğine inanırım.</p>
+          <h3 data-i18n="value2Title">İnsan Odaklı</h3>
+          <p data-i18n="value2Desc">Teknoloji ne kadar önemli olursa olsun, asıl gücün insan ilişkilerinden geldiğine inanırım.</p>
         </div>
         <div class="value-card">
-          <h3>Uyumlu ve Hızlı Öğrenen</h3>
-          <p>Sektör, proje ya da teknoloji fark etmeksizin, yeni ortamlara hızlı adapte olurum.</p>
+          <h3 data-i18n="value3Title">Uyumlu ve Hızlı Öğrenen</h3>
+          <p data-i18n="value3Desc">Sektör, proje ya da teknoloji fark etmeksizin, yeni ortamlara hızlı adapte olurum.</p>
         </div>
         <div class="value-card">
-          <h3>Üreten ve Paylaşan</h3>
-          <p>Ürettiğim fikirleri hayata geçirip, başkalarıyla paylaşmaktan keyif alırım.</p>
+          <h3 data-i18n="value4Title">Üreten ve Paylaşan</h3>
+          <p data-i18n="value4Desc">Ürettiğim fikirleri hayata geçirip, başkalarıyla paylaşmaktan keyif alırım.</p>
         </div>
       </div>
     </div>
@@ -178,31 +182,46 @@
   <!-- Vizyon -->
   <section id="vision" class="section reveal">
     <div class="container">
-      <h2>Vizyonum</h2>
-      <p>Benim hedefim, teknoloji ve iş dünyası arasındaki köprüyü kurmak. Sadece teknik bir geliştirici değil, aynı zamanda projelerin stratejik boyutunu anlayan, insanları bir araya getirebilen ve yenilikçi çözümler üretebilen biri olmak istiyorum. Gelecekte, kendi girişimimi kurarak hem teknolojiyi hem de iş geliştirme becerilerimi birleştirmek, global ölçekte sosyal ve çevresel etki yaratmak istiyorum.</p>
+      <h2 data-i18n="visionHeading">Vizyonum</h2>
+      <p data-i18n="visionDesc">Benim hedefim, teknoloji ve iş dünyası arasındaki köprüyü kurmak. Sadece teknik bir geliştirici değil, aynı zamanda projelerin stratejik boyutunu anlayan, insanları bir araya getirebilen ve yenilikçi çözümler üretebilen biri olmak istiyorum. Gelecekte, kendi girişimimi kurarak hem teknolojiyi hem de iş geliştirme becerilerimi birleştirmek, global ölçekte sosyal ve çevresel etki yaratmak istiyorum.</p>
     </div>
   </section>
 
   <!-- Blog -->
-  <section id="blog" class="section alternate reveal">
+  <section id="blog" class="section reveal">
     <div class="container">
-      <h2>Blog</h2>
+      <h2 data-i18n="blogHeading">Blog</h2>
       <div class="blog-grid">
         <div class="blog-card">
-          <img src="assets/img/profile.jpg" alt="Blog gönderisi görseli: profil" />
-          <h3>Yeni Bir Başlangıç</h3>
-          <p>Kişisel web sitemi nasıl tasarladığımı ve bu süreçte neler öğrendiğimi anlattığım ilk blog yazımı yakında burada bulabilirsiniz.</p>
+          <img src="assets/pattern.png" alt="Blog görseli" />
+          <h3 data-i18n="blog1Title">Yeni Bir Başlangıç</h3>
+          <p data-i18n="blog1Desc">Kişisel web sitemi nasıl tasarladığımı ve bu süreçte neler öğrendiğimi anlattığım ilk blog yazımı yakında burada bulabilirsiniz.</p>
         </div>
         <div class="blog-card">
-          <img src="assets/img/melih.jpg" alt="Blog gönderisi görseli: melih hocayla" />
-          <h3>Teknoloji ve Sürdürülebilirlik</h3>
-          <p>Sürdürülebilirlik ve teknolojinin kesişiminde neler yapılabileceğine dair fikirlerimi ve deneyimlerimi paylaşacağım.</p>
+          <img src="assets/melih.jpg" alt="Blog görseli" />
+          <h3 data-i18n="blog2Title">Teknoloji ve Sürdürülebilirlik</h3>
+          <p data-i18n="blog2Desc">Sürdürülebilirlik ve teknolojinin kesişiminde neler yapılabileceğine dair fikirlerimi ve deneyimlerimi paylaşacağım.</p>
         </div>
         <div class="blog-card">
-          <img src="assets/img/pattern.png" alt="Blog gönderisi görseli: desen" />
-          <h3>Power Apps ile Çözüm Geliştirme</h3>
-          <p>Power Apps ve Power Automate kullanarak geliştirdiğim çözümlerden örnekler ve ipuçları.</p>
+          <img src="assets/pattern.png" alt="Blog görseli" />
+          <h3 data-i18n="blog3Title">Power Apps ile Çözüm Geliştirme</h3>
+          <p data-i18n="blog3Desc">Power Apps ve Power Automate kullanarak geliştirdiğim çözümlerden örnekler ve ipuçları.</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Fotoğraf Galerisi -->
+  <section id="gallery" class="section reveal">
+    <div class="container">
+      <h2 data-i18n="galleryHeading">Galeri</h2>
+      <div class="gallery-grid">
+        <!-- Galeriye eklemek istediğiniz fotoğrafları aşağıya sıralayın -->
+        <img src="https://raw.githubusercontent.com/aksoycem/aksoycem.github.io/main/ana%20sayfa%20foto.HEIC" alt="Ana sayfa fotoğrafım">
+        <img src="https://raw.githubusercontent.com/aksoycem/aksoycem.github.io/main/I%CC%87s%CC%A7te%20c%CC%a7alıs%CC%a7ırken%20foto.HEIC" alt="Çalışma ortamından bir kare">
+        <img src="https://raw.githubusercontent.com/aksoycem/aksoycem.github.io/main/birincilik%20ekip%20fotosu%20duygusal.HEIC" alt="Ekip arkadaşlarımla duygusal an">
+        <img src="https://raw.githubusercontent.com/aksoycem/aksoycem.github.io/main/melih%20hocayla%20desten%20foto.jpg" alt="Arkadaşlarımla fotoğraf">
+        <img src="https://raw.githubusercontent.com/aksoycem/aksoycem.github.io/main/dubai%20cool%20foto.JPG" alt="Dubai fotoğrafı">
       </div>
     </div>
   </section>
@@ -210,23 +229,17 @@
   <!-- İletişim -->
   <section id="contact" class="section reveal">
     <div class="container">
-      <h2>İletişim</h2>
-      <p>Benimle iletişime geçmek veya daha fazla bilgi almak için aşağıdaki kanalları kullanabilirsiniz.</p>
+      <h2 data-i18n="contactHeading">İletişim</h2>
+      <p data-i18n="contactDesc">Benimle iletişime geçmek veya daha fazla bilgi almak için aşağıdaki kanalları kullanabilirsiniz.</p>
       <div class="contact-links">
         <a href="mailto:cem@cemaksoy.net" class="contact-btn">cem@cemaksoy.net</a>
         <a href="https://github.com/aksoycem" target="_blank" class="icon-link" aria-label="GitHub">
-          <span class="icon github">
-            <!-- GitHub SVG -->
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" /></svg>
-          </span>
-          <span>GitHub</span>
+          <span class="icon github"><!-- GitHub logosu --></span>
+          <span data-i18n="contactGithub">GitHub</span>
         </a>
-        <a href="https://tr.linkedin.com/in/cem-aksoy-8b7578263?trk=people-guest_people_search-card" target="_blank" class="icon-link" aria-label="LinkedIn">
-          <span class="icon linkedin">
-            <!-- LinkedIn SVG -->
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21,21H17V14.25C17,13.19 15.81,12.31 14.75,12.31C13.69,12.31 13,13.19 13,14.25V21H9V9H13V11C13.66,9.93 15.36,9.24 16.5,9.24C19,9.24 21,11.28 21,13.75V21M7,21H3V9H7V21M5,3A2,2 0 0,1 7,5A2,2 0 0,1 5,7A2,2 0 0,1 3,5A2,2 0 0,1 5,3Z" /></svg>
-          </span>
-          <span>LinkedIn</span>
+        <a href="https://tr.linkedin.com/in/cem-aksoy-8b7578263" target="_blank" class="icon-link" aria-label="LinkedIn">
+          <span class="icon linkedin"><!-- LinkedIn logosu --></span>
+          <span data-i18n="contactLinkedIn">LinkedIn</span>
         </a>
       </div>
     </div>
@@ -235,11 +248,11 @@
   <!-- Alt bilgi -->
   <footer>
     <div class="container">
-      <p>&copy; 2025 Cem Aksoy. Tüm hakları saklıdır.</p>
+      <p data-i18n="footerText">&copy; 2025 Cem Aksoy. Tüm hakları saklıdır.</p>
     </div>
   </footer>
 
-  <!-- Betik dosyası -->
+  <!-- JavaScript -->
   <script src="assets/js/script.js"></script>
 </body>
 </html>
