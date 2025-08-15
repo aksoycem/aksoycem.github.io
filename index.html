@@ -6,64 +6,87 @@
   <title>Cem Aksoy — Technology, Innovation & People</title>
   <meta name="description" content="Cem Aksoy — Technology, Innovation & People. Personal site, portfolio and blog." />
   <meta property="og:title" content="Cem Aksoy — Technology, Innovation & People" />
-  <meta property="og:description" content="Innovation & Management intern building people-centered systems. Java, Power Platform, process design, sustainability." />
+  <meta property="og:description" content="Innovation & Management intern building people-centered systems. Process design, sustainability, and useful software." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="portrait.jpg" />
+  <meta property="og:image" content="IMG_1471.jpeg" />
   <meta name="theme-color" content="#0b0b0b" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
   <style>
     :root{
-      --bg:#ffffff; --fg:#0b0b0b; --muted:#6b7280; --card:#f7f7f8; --accent:#111111; --ring:rgba(0,0,0,.08); --shadow:0 10px 30px rgba(0,0,0,.06); --radius:18px; --radius-lg:28px;
+      --bg:#ffffff; --fg:#0b0b0b; --muted:#6b7280; --card:#f7f7f8; --accent:#111111;
+      --ring:rgba(0,0,0,.08); --shadow:0 10px 30px rgba(0,0,0,.06);
+      --radius:18px; --radius-lg:28px;
     }
     *{box-sizing:border-box}
     html,body{height:100%}
-    body{margin:0; font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,Helvetica,sans-serif; color:var(--fg); background:var(--bg); -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility}
-    a{color:inherit; text-decoration:none}
-    img{max-width:100%; display:block}
-    .container{max-width:1100px; margin:0 auto; padding:0 20px}
-    header{position:sticky; top:0; z-index:50; backdrop-filter:saturate(180%) blur(10px); background:rgba(255,255,255,.7); border-bottom:1px solid rgba(0,0,0,.06)}
-    .nav{display:flex; align-items:center; justify-content:space-between; padding:14px 0}
-    .brand{display:flex; gap:12px; align-items:center; font-weight:700; letter-spacing:.2px}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--fg);background:var(--bg);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .container{max-width:1100px;margin:0 auto;padding:0 20px}
+
+    header{position:sticky;top:0;z-index:50;backdrop-filter:saturate(180%) blur(10px);
+      background:rgba(255,255,255,.7);border-bottom:1px solid rgba(0,0,0,.06)}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+    .brand{display:flex;gap:12px;align-items:center;font-weight:700;letter-spacing:.2px}
     .brand .dot{width:10px;height:10px;border-radius:50%;background:var(--fg)}
-    .navlinks{display:flex; gap:14px; align-items:center}
-    .navlinks a{padding:10px 14px; border-radius:12px; transition:transform .2s ease, background .2s ease}
-    .navlinks a:hover{background:var(--card); transform:translateY(-1px)}
-    .lang{display:flex; gap:10px; padding:6px; border-radius:999px; background:var(--card); border:1px solid rgba(0,0,0,.06); box-shadow:var(--shadow)}
-    .lang button{border:0; background:transparent; padding:8px 14px; border-radius:999px; font-weight:600; cursor:pointer}
-    .lang button.active{background:#000; color:#fff; box-shadow:0 8px 16px rgba(0,0,0,.15)}
+    .navlinks{display:flex;gap:14px;align-items:center;}
+    .navlinks a{padding:10px 14px;border-radius:12px;transition:transform .2s ease, background .2s ease}
+    .navlinks a:hover{background:var(--card);transform:translateY(-1px)}
+
+    .lang{display:flex;gap:10px;padding:6px;border-radius:999px;background:var(--card);
+      border:1px solid rgba(0,0,0,.06);box-shadow:var(--shadow)}
+    .lang button{border:0;background:transparent;padding:8px 14px;border-radius:999px;font-weight:600;cursor:pointer}
+    .lang button.active{background:#000;color:#fff;box-shadow:0 8px 16px rgba(0,0,0,.15)}
+
     .hero{padding:56px 0 18px}
-    .hero-wrap{display:grid; grid-template-columns:1.2fr .8fr; gap:28px; align-items:center}
-    .eyebrow{font-size:14px; font-weight:700; letter-spacing:.18em; text-transform:uppercase; color:var(--muted)}
-    h1{font-size:clamp(36px,5vw,54px); line-height:1.05; margin:8px 0 16px}
-    .lede{font-size:clamp(16px,2.3vw,18px); color:#1f2937}
-    .cta{display:flex; gap:12px; margin-top:22px}
-    .btn{padding:14px 18px; border-radius:14px; border:1px solid #111; background:#111; color:#fff; font-weight:700; cursor:pointer; transition:transform .2s ease, box-shadow .2s ease}
-    .btn:hover{transform:translateY(-1px); box-shadow:0 10px 25px rgba(0,0,0,.2)}
-    .btn.ghost{background:transparent; color:#111}
-    .hero-card{position:relative; border-radius:var(--radius-lg); overflow:hidden; border:1px solid rgba(0,0,0,.08); background:linear-gradient(180deg,#fdfdfd, #f5f5f7)}
-    .hero-card .frame{aspect-ratio:1/1}
-    .hero-card img{width:100%; height:100%; object-fit:cover}
-    .shine{position:absolute; inset:0; background:radial-gradient(600px 200px at 30% 0%, rgba(255,255,255,.6), transparent 66%)}
+    .hero-wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:center}
+    .eyebrow{font-size:14px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+    h1{font-size:clamp(36px,5vw,54px);line-height:1.05;margin:8px 0 16px;}
+    .lede{font-size:clamp(16px,2.3vw,18px);color:#1f2937}
+    .cta{display:flex;gap:12px;margin-top:22px}
+    .btn{padding:14px 18px;border-radius:14px;border:1px solid #111;background:#111;color:#fff;font-weight:700;cursor:pointer;transition:transform .2s ease, box-shadow .2s ease}
+    .btn:hover{transform:translateY(-1px);box-shadow:0 10px 25px rgba(0,0,0,.2)}
+    .btn.ghost{background:transparent;color:#111}
+
+    .hero-card{position:relative;border-radius:var(--radius-lg);overflow:hidden;border:1px solid rgba(0,0,0,.08);background:linear-gradient(180deg,#fdfdfd, #f5f5f7)}
+    .hero-card .frame{aspect-ratio:1/1;}
+    .hero-card img{width:100%;height:100%;object-fit:cover;transform:scale(1.005);transition:transform .6s ease}
+    .hero-card:hover img{transform:scale(1.02)}
+    .shine{position:absolute;inset:0;background:radial-gradient(600px 200px at 30% 0%, rgba(255,255,255,.6), transparent 66%)}
+
     section{padding:52px 0}
-    .grid{display:grid; grid-template-columns:repeat(12,1fr); gap:18px}
-    .card{grid-column:1 / -1; background:var(--card); border:1px solid rgba(0,0,0,.06); border-radius:var(--radius); padding:22px; box-shadow:var(--shadow)}
+    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:18px}
+    .card{grid-column:1 / -1;background:var(--card);border:1px solid rgba(0,0,0,.06);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
+    .card h3{margin:0 0 10px}
     .two{grid-column:span 6}
     .three{grid-column:span 4}
-    .kvs{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px}
-    .kv{padding:16px; border-radius:14px; background:#fff; border:1px solid rgba(0,0,0,.06)}
-    ul.clean{list-style:none; padding:0; margin:0; display:grid; gap:10px}
-    .pill{display:inline-flex; align-items:center; gap:8px; padding:8px 12px; border-radius:999px; background:#fff; border:1px solid rgba(0,0,0,.06)}
-    .blog-list{display:grid; gap:16px}
-    .post{padding:16px; border-radius:16px; background:#fff; border:1px solid rgba(0,0,0,.06); display:flex; justify-content:space-between; align-items:center}
-    .post time{color:var(--muted); font-size:14px}
+
+    .kvs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+    .kv{padding:16px;border-radius:14px;background:#fff;border:1px solid rgba(0,0,0,.06)}
+
+    ul.clean{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+    .pill{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;background:#fff;border:1px solid rgba(0,0,0,.06)}
+
+    .blog-list{display:grid;gap:16px}
+    .post{padding:16px;border-radius:16px;background:#fff;border:1px solid rgba(0,0,0,.06);display:flex;justify-content:space-between;align-items:center}
+    .post time{color:var(--muted);font-size:14px}
+
     footer{padding:60px 0 90px}
-    .foot{display:flex; flex-wrap:wrap; gap:16px; align-items:center; justify-content:space-between}
-    @media (max-width: 900px){ .hero-wrap{grid-template-columns:1fr} .two,.three{grid-column:1/-1} }
-    .fade-in{opacity:0; transform:translateY(8px); animation:fade .6s ease forwards}
-    .fade-in.delay-1{animation-delay:.1s} .fade-in.delay-2{animation-delay:.2s} .fade-in.delay-3{animation-delay:.3s}
-    @keyframes fade{to{opacity:1; transform:none}}
+    .foot{display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between}
+
+    @media (max-width: 900px){
+      .hero-wrap{grid-template-columns:1fr;}
+      .two{grid-column:1/-1}
+      .three{grid-column:1/-1}
+    }
+
+    .fade-in{opacity:0;transform:translateY(8px);animation:fade .6s ease forwards}
+    .fade-in.delay-1{animation-delay:.1s}
+    .fade-in.delay-2{animation-delay:.2s}
+    .fade-in.delay-3{animation-delay:.3s}
+    @keyframes fade{to{opacity:1;transform:none}}
   </style>
 </head>
 <body>
@@ -78,7 +101,7 @@
         <a href="#experience" data-i18n="nav_experience">Experience</a>
         <a href="#project" data-i18n="nav_project">Project</a>
         <a href="#skills" data-i18n="nav_skills">Skills</a>
-        <a href="#certs" data-i18n="nav_certs">Certificates</a>
+        <a href="#certs" data-i18n="nav_certs">Certifications</a>
         <a href="#blog" data-i18n="nav_blog">Blog</a>
         <a href="#contact" data-i18n="nav_contact">Contact</a>
         <div class="lang" role="tablist" aria-label="Language toggle">
@@ -90,11 +113,12 @@
   </header>
 
   <main>
+    <!-- HERO -->
     <section class="hero" id="home">
       <div class="container hero-wrap">
         <div>
           <div class="eyebrow" data-i18n="eyebrow">Technology • Innovation • People</div>
-          <h1 data-i18n="hero_title">Cem Aksoy — A people‑centered journey through tech and innovation</h1>
+          <h1 data-i18n="hero_title">Cem Aksoy — A people-centered journey through tech and innovation</h1>
           <p class="lede" data-i18n="hero_lede">I turn ideas into systems that make work simpler and outcomes clearer. Less fuss, more impact.</p>
           <div class="cta">
             <a class="btn" href="#contact" data-i18n="cta_contact">Contact</a>
@@ -103,18 +127,25 @@
         </div>
         <div class="hero-card fade-in delay-2" aria-hidden="true">
           <div class="frame">
-            <img id="hero-photo" src="IMG_1471.jpeg" alt="Portrait of Cem Aksoy"/>
+            <!-- Your portrait in repo root -->
+            <img id="hero-photo" src="IMG_1471.jpeg?v=1" alt="Portrait of Cem Aksoy" loading="eager" />
           </div>
           <div class="shine"></div>
         </div>
       </div>
     </section>
 
+    <!-- ABOUT / CURRENT ROLE -->
     <section id="about">
       <div class="container grid">
         <article class="card two fade-in">
           <h3 data-i18n="about_title">Now</h3>
-          <p data-i18n="about_body">Since July 2025, I’ve been an Innovation & Management Intern at Türkon Line. Internship runs through June 2026. I build internal tools with Microsoft Power Platform, convert system diagrams into functional process flows with Visio, run improvement projects aligned with ISO 56001, and generate ideas that connect innovation policy with sustainability goals.</p>
+          <p data-i18n="about_body">
+            Since July 2025, I’ve been an Innovation & Management Intern at Türkon Line.
+            I build internal tools with Microsoft Power Platform, convert system diagrams into functional process flows with Visio,
+            run improvement projects aligned with ISO 56001, and generate ideas that connect innovation policy with sustainability goals.
+            I’m a 4th-year Software Engineering student; graduating in 2026. This internship runs until end of June.
+          </p>
           <div class="kvs">
             <div class="kv"><strong>Power Platform</strong><br/><span class="muted">Power Apps, Power Automate</span></div>
             <div class="kv"><strong>Process</strong><br/><span class="muted">Visio, flow design</span></div>
@@ -122,11 +153,15 @@
         </article>
         <aside class="card two fade-in delay-1">
           <h3 data-i18n="bio_title">Bio</h3>
-          <p data-i18n="bio_body">I’m a 4th‑year Software Engineering student at Bahçeşehir University, graduating in 2026. Curiosity started early: at 10, I configured IP and local networks to play Minecraft with friends. Since then, tech has been my tool to solve problems and deliver value.</p>
+          <p data-i18n="bio_body">
+            Curiosity started early: at 10, I configured IP and local networks to play Minecraft with friends.
+            Since then, tech has been my tool to solve problems and deliver value.
+          </p>
         </aside>
       </div>
     </section>
 
+    <!-- EXPERIENCE -->
     <section id="experience">
       <div class="container grid">
         <div class="card three fade-in">
@@ -152,60 +187,71 @@
       </div>
     </section>
 
+    <!-- PROJECT -->
     <section id="project">
       <div class="container grid">
         <article class="card fade-in">
           <h3 data-i18n="proj_t">Featured Project — reSort & WeShape</h3>
-          <p data-i18n="proj_d">With Prof. Melih Elidüzgün at Bahçeşehir University, we built an AI‑assisted smart recycling system to boost sorting efficiency. The project earned approval from the Central European Institute on Sustainability & Innovation and entry into the WeShape Entrepreneurship Program (Katalist & CIFE partnership). We iterated with global mentors and investors, and I gained real‑world experience in international collaboration and sustainable business models.</p>
+          <p data-i18n="proj_d">
+            With Prof. Melih Elidüzgün at Bahçeşehir University, we built an AI-assisted smart recycling system to boost sorting efficiency.
+            The project earned approval from the Central European Institute on Sustainability & Innovation and entry into the WeShape Entrepreneurship Program (Katalist & CIFE partnership).
+            We iterated with global mentors and investors, and I gained real-world experience in international collaboration and sustainable business models.
+          </p>
         </article>
       </div>
     </section>
 
+    <!-- SKILLS (personality-aligned, tech pills removed) -->
     <section id="skills">
       <div class="container grid">
         <div class="card two fade-in">
           <h3 data-i18n="skills_t">Skills</h3>
           <ul class="clean">
-            <li><span class="pill">Java</span> <span class="pill">Python</span> <span class="pill">C</span> <span class="pill">Swift</span> <span class="pill">PHP</span> <span class="pill">SQL</span></li>
-            <li><span class="pill">Power BI</span> <span class="pill">Tableau</span> <span class="pill">Azure AI</span> <span class="pill">Power Platform</span> <span class="pill">Visio</span></li>
-            <li><span class="pill" data-i18n="skills_a1">Systems thinking</span> <span class="pill" data-i18n="skills_a2">Low‑code automation</span> <span class="pill" data-i18n="skills_a3">Rapid prototyping</span> <span class="pill" data-i18n="skills_a4">Process optimization</span></li>
-            <li><span class="pill" data-i18n="skills_c1">Stakeholder communication</span> <span class="pill" data-i18n="skills_c2">Clear presentations</span> <span class="pill" data-i18n="skills_c3">Bilingual (TR/EN)</span></li>
+            <li>
+              <span class="pill" data-i18n="skills_a1">Process analysis</span>
+              <span class="pill" data-i18n="skills_a2">Project management</span>
+              <span class="pill" data-i18n="skills_a3">Data visualization</span>
+              <span class="pill" data-i18n="skills_a4">Optimization</span>
+            </li>
           </ul>
         </div>
         <div class="card two fade-in delay-1">
           <h3 data-i18n="traits_t">Personal</h3>
           <ul class="clean">
             <li data-i18n="trait1">Curious and always learning</li>
-            <li data-i18n="trait2">People‑first collaborator</li>
+            <li data-i18n="trait2">People-first collaborator</li>
             <li data-i18n="trait3">Versatile across tech and strategy</li>
-            <li data-i18n="trait4">Goal‑driven; delivers outcomes</li>
+            <li data-i18n="trait4">Goal-driven; delivers outcomes</li>
           </ul>
         </div>
       </div>
     </section>
 
+    <!-- CERTIFICATIONS -->
     <section id="certs">
       <div class="container grid">
-        <article class="card two fade-in">
-          <h3 data-i18n="certs_t">Certificates</h3>
+        <article class="card fade-in">
+          <h3 data-i18n="certs_t">Certifications</h3>
           <ul class="clean">
-            <li><span class="pill">Google IT Support — 6 months</span></li>
-            <li><span class="pill">Akbank (Program Certificate) — 6 months</span></li>
-            <li><span class="pill">Cisco CyberOps — 6 months training</span></li>
+            <li><span class="pill">Google IT</span> — <span data-i18n="months6">6 months</span></li>
+            <li><span class="pill">Akbank (IT/Tech)</span> — <span data-i18n="months6">6 months</span></li>
+            <li><span class="pill">Cisco CyberOps</span> — <span data-i18n="months6">6 months</span></li>
           </ul>
         </article>
       </div>
     </section>
 
+    <!-- VISION -->
     <section id="vision">
       <div class="container grid">
         <article class="card fade-in">
           <h3 data-i18n="vision_t">Vision</h3>
-          <p data-i18n="vision_d">Bridge tech and business to design human‑centered systems. In the long run, build a venture that creates global social and environmental impact.</p>
+          <p data-i18n="vision_d">Bridge tech and business to design human-centered systems. In the long run, build a venture that creates global social and environmental impact.</p>
         </article>
       </div>
     </section>
 
+    <!-- BLOG -->
     <section id="blog">
       <div class="container grid">
         <article class="card fade-in">
@@ -216,6 +262,7 @@
       </div>
     </section>
 
+    <!-- CONTACT -->
     <section id="contact">
       <div class="container grid">
         <div class="card two fade-in">
@@ -224,8 +271,8 @@
           <p><strong>LinkedIn:</strong> <a href="https://tr.linkedin.com/in/cem-aksoy-8b7578263" target="_blank" rel="noopener">linkedin.com/in/cem-aksoy-8b7578263</a></p>
         </div>
         <div class="card two fade-in delay-1">
-          <h3 data-i18n="download_t">CV / Résumé PDF</h3>
-          <p data-i18n="download_d">Coming soon…</p>
+          <h3 data-i18n="download_t">CV / Resume PDF</h3>
+          <p data-i18n="download_d">Coming soon.</p>
         </div>
       </div>
     </section>
@@ -234,31 +281,26 @@
   <footer>
     <div class="container foot">
       <div>&copy; <span id="y"></span> Cem Aksoy</div>
-      <div class="muted" data-i18n="footer_text">On my way to becoming a technology leader.</div>
+      <div id="foot-note" class="muted">Built with clean HTML/CSS/JS • Minimal & fast</div>
     </div>
   </footer>
 
   <script>
-    const $ = (s, r=document)=>r.querySelector(s); const $$=(s,r=document)=>Array.from(r.querySelectorAll(s));
+    const $ = (sel, root=document) => root.querySelector(sel);
+    const $$ = (sel, root=document) => Array.from(root.querySelectorAll(sel));
 
     const i18n = {
       en:{
         eyebrow:"Technology • Innovation • People",
-        hero_title:"Cem Aksoy — A people‑centered journey through tech and innovation",
+        hero_title:"Cem Aksoy — A people-centered journey through tech and innovation",
         hero_lede:"I turn ideas into systems that make work simpler and outcomes clearer. Less fuss, more impact.",
-        cta_contact:"Contact",
-        cta_blog:"Go to Blog",
-        nav_about:"About",
-        nav_experience:"Experience",
-        nav_project:"Project",
-        nav_skills:"Skills",
-        nav_certs:"Certificates",
-        nav_blog:"Blog",
-        nav_contact:"Contact",
+        cta_contact:"Contact", cta_blog:"Go to Blog",
+        nav_about:"About", nav_experience:"Experience", nav_project:"Project",
+        nav_skills:"Skills", nav_certs:"Certifications", nav_blog:"Blog", nav_contact:"Contact",
         about_title:"Now",
-        about_body:"Since July 2025, I’ve been an Innovation & Management Intern at Türkon Line. Internship runs through June 2026. I build internal tools with Microsoft Power Platform, convert system diagrams into functional process flows with Visio, run improvement projects aligned with ISO 56001, and generate ideas that connect innovation policy with sustainability goals.",
+        about_body:"Since July 2025, I’ve been an Innovation & Management Intern at Türkon Line. I build internal tools with Microsoft Power Platform, convert system diagrams into functional process flows with Visio, run improvement projects aligned with ISO 56001, and generate ideas that connect innovation policy with sustainability goals. I’m a 4th-year Software Engineering student; graduating in 2026. This internship runs until end of June.",
         bio_title:"Bio",
-        bio_body:"I’m a 4th‑year Software Engineering student at Bahçeşehir University, graduating in 2026. Curiosity started early: at 10, I configured IP and local networks to play Minecraft with friends. Since then, tech has been my tool to solve problems and deliver value.",
+        bio_body:"Curiosity started early: at 10, I configured IP and local networks to play Minecraft with friends. Since then, tech has been my tool to solve problems and deliver value.",
         exp1_t:"Junior Software Developer — makeSosimple",
         exp1_d:"Jan 2025 – Jun 2025. Built Java features, fixed defects, and improved performance and UX.",
         exp2_t:"Junior Business Analyst — Kidu (Sabancı Center)",
@@ -270,44 +312,30 @@
         exp5_t:"VIP Operations Coordinator — Beşiktaş JK",
         exp5_d:"2021 – 2024. Ran VIP vehicle ops; protocol and event logistics at scale.",
         proj_t:"Featured Project — reSort & WeShape",
-        proj_d:"With Prof. Melih Elidüzgün at Bahçeşehir University, we built an AI‑assisted smart recycling system to boost sorting efficiency. The project earned approval from the Central European Institute on Sustainability & Innovation and entry into the WeShape Entrepreneurship Program (Katalist & CIFE partnership). We iterated with global mentors and investors, and I gained real‑world experience in international collaboration and sustainable business models.",
+        proj_d:"With Prof. Melih Elidüzgün at Bahçeşehir University, we built an AI-assisted smart recycling system to boost sorting efficiency. The project earned approval from the Central European Institute on Sustainability & Innovation and entry into the WeShape Entrepreneurship Program (Katalist & CIFE partnership). We iterated with global mentors and investors, and I gained real-world experience in international collaboration and sustainable business models.",
         skills_t:"Skills",
-        skills_a1:"Systems thinking",
-        skills_a2:"Low‑code automation",
-        skills_a3:"Rapid prototyping",
-        skills_a4:"Process optimization",
+        skills_a1:"Process analysis", skills_a2:"Project management", skills_a3:"Data visualization", skills_a4:"Optimization",
         traits_t:"Personal",
-        trait1:"Curious and always learning",
-        trait2:"People‑first collaborator",
-        trait3:"Versatile across tech and strategy",
-        trait4:"Goal‑driven; delivers outcomes",
-        certs_t:"Certificates",
+        trait1:"Curious and always learning", trait2:"People-first collaborator", trait3:"Versatile across tech and strategy", trait4:"Goal-driven; delivers outcomes",
+        certs_t:"Certifications", months6:"6 months",
         vision_t:"Vision",
-        vision_d:"Bridge tech and business to design human‑centered systems. In the long run, build a venture that creates global social and environmental impact.",
+        vision_d:"Bridge tech and business to design human-centered systems. In the long run, build a venture that creates global social and environmental impact.",
         blog_t:"Blog",
         blog_intro:"Posts will appear here. Add entries to the posts array in the script below — each with a title, date and summary. Clicking a post opens its detail.",
         contact_t:"Contact",
-        download_t:"CV / Résumé PDF",
-        download_d:"Coming soon…",
-        footer_text:"On my way to becoming a technology leader."
+        download_t:"CV / Resume PDF", download_d:"Coming soon."
       },
       tr:{
         eyebrow:"Teknoloji • İnovasyon • İnsan",
         hero_title:"Cem Aksoy — Teknoloji, inovasyon ve insan odaklı bir yolculuk",
         hero_lede:"Fikirleri işleri kolaylaştıran, sonuçları netleştiren sistemlere dönüştürürüm. Daha az gürültü, daha fazla etki.",
-        cta_contact:"İletişim",
-        cta_blog:"Blog'a Git",
-        nav_about:"Hakkımda",
-        nav_experience:"Deneyim",
-        nav_project:"Proje",
-        nav_skills:"Yetkinlikler",
-        nav_certs:"Sertifikalar",
-        nav_blog:"Blog",
-        nav_contact:"İletişim",
+        cta_contact:"İletişim", cta_blog:"Blog'a Git",
+        nav_about:"Hakkımda", nav_experience:"Deneyim", nav_project:"Proje",
+        nav_skills:"Yetkinlikler", nav_certs:"Sertifikalar", nav_blog:"Blog", nav_contact:"İletişim",
         about_title:"Şu An",
-        about_body:"Temmuz 2025'ten beri Türkon Line'da Innovation & Management Intern olarak çalışıyorum. Staj Haziran 2026'da tamamlanacak. Microsoft Power Platform ile iç araçlar geliştiriyorum, Visio ile sistem diyagramlarını fonksiyonel süreç akışlarına dönüştürüyorum, ISO 56001 ile uyumlu iyileştirme projeleri yürütüyor ve inovasyon politikası ile sürdürülebilirlik hedeflerini bağlayan fikirler geliştiriyorum.",
+        about_body:"Temmuz 2025'ten bu yana Türkon Line'da Innovation & Management Intern olarak çalışıyorum. Microsoft Power Platform ile iç araçlar geliştiriyorum, Visio ile sistem diyagramlarını fonksiyonel süreç akışlarına dönüştürüyorum, ISO 56001 ile uyumlu iyileştirme projeleri yürütüyorum ve inovasyon politikası ile sürdürülebilirlik hedeflerini bağlayan fikirler geliştiriyorum. Bahçeşehir Üniversitesi Yazılım Mühendisliği 4. sınıf öğrencisiyim; 2026'da mezun olacağım. Bu staj Haziran sonunda tamamlanır.",
         bio_title:"Biyografi",
-        bio_body:"Bahçeşehir Üniversitesi Yazılım Mühendisliği 4. sınıf öğrencisiyim; 2026'da mezun olacağım. Merakım küçük yaşta başladı: 10 yaşımda arkadaşlarımla Minecraft oynamak için IP ve yerel ağ yapılandırmasını kendim kurdum. O günden beri teknoloji benim için değer üreten bir problem çözme aracı.",
+        bio_body:"Merakım küçük yaşta başladı: 10 yaşımda arkadaşlarımla Minecraft oynamak için IP ve yerel ağ yapılandırmasını kendim kurdum. O günden beri teknoloji benim için değer üreten bir problem çözme aracı.",
         exp1_t:"Junior Software Developer — makeSosimple",
         exp1_d:"Ocak 2025 – Haziran 2025. Java özellikleri geliştirdim, hataları giderdim, performans ve UX'i iyileştirdim.",
         exp2_t:"Junior Business Analyst — Kidu (Sabancı Center)",
@@ -321,32 +349,24 @@
         proj_t:"Öne Çıkan Proje — reSort & WeShape",
         proj_d:"Bahçeşehir Üniversitesi'nde Prof. Melih Elidüzgün ile geri dönüşüm ayrıştırma verimliliğini artıran yapay zekâ destekli bir sistem geliştirdik. Proje, Central European Institute on Sustainability & Innovation tarafından onaylandı ve Katalist & CIFE iş birliğiyle yürütülen WeShape girişim programına kabul edildi. Uluslararası mentorlar ve yatırımcılarla çalıştık; iş birliği ve sürdürülebilir iş modelleri konusunda somut deneyim kazandım.",
         skills_t:"Yetkinlikler",
-        skills_a1:"Sistemsel düşünme",
-        skills_a2:"Low‑code otomasyon",
-        skills_a3:"Hızlı prototipleme",
-        skills_a4:"Süreç optimizasyonu",
+        skills_a1:"Süreç analizi", skills_a2:"Proje yönetimi", skills_a3:"Veri görselleştirme", skills_a4:"Optimizasyon",
         traits_t:"Kişisel",
-        trait1:"Meraklı ve öğrenmeye açık",
-        trait2:"İnsan odaklı ekip oyuncusu",
-        trait3:"Teknik ve stratejik rollerde esnek",
-        trait4:"Hedef odaklı; sonuç üretir",
-        certs_t:"Sertifikalar",
+        trait1:"Meraklı ve öğrenmeye açık", trait2:"İnsan odaklı ekip oyuncusu", trait3:"Teknik ve stratejik rollerde esnek", trait4:"Hedef odaklı; sonuç üretir",
+        certs_t:"Sertifikalar", months6:"6 ay",
         vision_t:"Vizyon",
         vision_d:"Teknoloji ile iş dünyası arasında köprü kurarak insan odaklı sistemler tasarlamak. Uzun vadede, küresel sosyal ve çevresel etki yaratan bir girişim kurmak.",
         blog_t:"Blog",
         blog_intro:"Yazılar burada listelenecek. Aşağıdaki scriptteki posts dizisine başlık, tarih ve özet ekleyin. Tıklanınca detay sayfası açılır.",
         contact_t:"İletişim",
-        download_t:"CV / Özgeçmiş PDF",
-        download_d:"Çok yakında…",
-        footer_text:"Bir teknoloji lideri olma yolunda."
+        download_t:"CV / Resume PDF", download_d:"Coming soon."
       }
     };
 
-    // Blog store — keep empty initially
+    // Blog store (empty; add later)
     const posts = [];
 
     function renderBlogList(lang='en'){
-      const list = document.getElementById('blogList');
+      const list = $('#blogList');
       list.innerHTML = '';
       if(!posts.length){
         const empty = document.createElement('div');
@@ -355,30 +375,37 @@
         list.appendChild(empty);
         return;
       }
-      posts.slice().sort((a,b)=> (b.date||'').localeCompare(a.date||''))
-        .forEach(p=>{
-          const row = document.createElement('a');
-          row.className = 'post';
-          row.href = `#post/${encodeURIComponent(p.id)}`;
-          row.innerHTML = `<div><strong>${p.title?.[lang]||p.title?.en||'Untitled'}</strong><div style="color:var(--muted); font-size:14px">${p.summary?.[lang]||''}</div></div><time>${p.date||''}</time>`;
-          list.appendChild(row);
-        });
+      posts.slice().sort((a,b)=> (b.date||'').localeCompare(a.date||'')).forEach(p=>{
+        const row = document.createElement('a');
+        row.className = 'post';
+        row.href = `#post/${encodeURIComponent(p.id)}`;
+        row.innerHTML = `<div><strong>${p.title?.[lang]||p.title?.en||'Untitled'}</strong><div style="color:var(--muted);font-size:14px">${p.summary?.[lang]||''}</div></div><time>${p.date||''}</time>`;
+        list.appendChild(row);
+      });
     }
 
     function route(){
       const hash = location.hash.slice(1);
       if(hash.startsWith('post/')){
-        const id = decodeURIComponent(hash.split('/')[1]||'');
-        openPost(id);
+        const id = decodeURIComponent(hash.split('/')[1]||''); openPost(id);
       }
     }
-
     function openPost(id){
-      const lang = currentLang; const p = posts.find(x=>x.id===id);
+      const lang = currentLang;
+      const p = posts.find(x=>x.id===id);
       if(!p){ alert(lang==='en' ? 'Post not found.' : 'Yazı bulunamadı.'); location.hash = '#blog'; return; }
       const modal = document.createElement('dialog');
-      modal.style.width='min(900px, 96vw)'; modal.style.border='1px solid rgba(0,0,0,.08)'; modal.style.borderRadius='20px'; modal.style.boxShadow='0 30px 80px rgba(0,0,0,.25)';
-      modal.innerHTML = `<form method="dialog" style="margin:0"><div style="display:flex; justify-content:space-between; align-items:center; padding:22px; border-bottom:1px solid rgba(0,0,0,.06)"><div><div class=\"eyebrow\">${p.date||''}</div><h2 style=\"margin:6px 0 0; font-size:clamp(22px,3vw,32px)\">${p.title?.[lang]||p.title?.en||''}</h2></div><button class=\"btn ghost\" value=\"cancel\" aria-label=\"Close\">${lang==='en'?'Close':'Kapat'}</button></div><div style=\"padding:22px; background:#fff\">${p.content?.[lang]||p.content?.en||''}</div></form>`;
+      modal.style.width='min(900px,96vw)'; modal.style.border='1px solid rgba(0,0,0,.08)';
+      modal.style.borderRadius='20px'; modal.style.boxShadow='0 30px 80px rgba(0,0,0,.25)';
+      modal.innerHTML = `
+        <form method="dialog" style="margin:0">
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:22px;border-bottom:1px solid rgba(0,0,0,.06)">
+            <div><div class="eyebrow">${p.date||''}</div>
+              <h2 style="margin:6px 0 0;font-size:clamp(22px,3vw,32px)">${p.title?.[lang]||p.title?.en||''}</h2></div>
+            <button class="btn ghost" value="cancel" aria-label="${lang==='en'?'Close':'Kapat'}">${lang==='en'?'Close':'Kapat'}</button>
+          </div>
+          <div style="padding:22px;background:#fff">${p.content?.[lang]||p.content?.en||''}</div>
+        </form>`;
       document.body.appendChild(modal);
       modal.addEventListener('close', ()=>{ modal.remove(); history.pushState('', document.title, window.location.pathname + window.location.search + '#blog');});
       modal.showModal();
@@ -386,24 +413,47 @@
 
     let currentLang = 'en';
     function setLang(lang){
-      currentLang = lang; const dict = i18n[lang] || i18n.en;
+      currentLang = lang;
+      const dict = i18n[lang] || i18n.en;
+      $$('[data-i18n]').forEach(el=>{
+        const key = el.getAttribute('data-i18n');
+        if(dict[key]) el.textContent = dict[key];
+      });
+      $$('.lang button').forEach(btn=>btn.classList.toggle('active', btn.getAttribute('data-lang')===lang));
+      renderBlogList(lang);
       document.documentElement.lang = lang;
       document.title = lang==='en' ? 'Cem Aksoy — Technology, Innovation & People' : 'Cem Aksoy — Teknoloji, İnovasyon ve İnsan';
-      document.querySelectorAll('[data-i18n]').forEach(el=>{ const key = el.getAttribute('data-i18n'); if(dict[key]) el.textContent = dict[key]; });
-      document.querySelectorAll('.lang button').forEach(btn=> btn.classList.toggle('active', btn.getAttribute('data-lang')===lang));
-      renderBlogList(lang);
+      // Footer note per language
+      $('#foot-note').textContent = lang==='en'
+        ? 'Built with clean HTML/CSS/JS • Minimal & fast'
+        : 'Teknoloji liderliği: net hedef, temiz sistem, ölçülebilir etki.';
     }
 
-    document.querySelectorAll('.lang button').forEach(btn=> btn.addEventListener('click', ()=> setLang(btn.getAttribute('data-lang'))));
+    $$('.lang button').forEach(btn=>btn.addEventListener('click', ()=> setLang(btn.getAttribute('data-lang'))));
 
     const sections = ['about','experience','project','skills','certs','blog','contact'];
-    const obs = new IntersectionObserver(entries=>{ entries.forEach(e=>{ if(e.isIntersecting){ const id=e.target.id; document.querySelectorAll('.navlinks a').forEach(a=> a.classList.toggle('active', a.getAttribute('href')==='#'+id)); } }) },{rootMargin:'-50% 0px -45% 0px', threshold:0});
+    const obs = new IntersectionObserver(entries=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          const id = entry.target.id;
+          $$('.navlinks a').forEach(a=> a.classList.toggle('active', a.getAttribute('href')==='#'+id));
+        }
+      })
+    },{rootMargin:'-50% 0px -45% 0px', threshold:0});
     sections.forEach(id=>{ const el = document.getElementById(id); if(el) obs.observe(el); });
 
-    document.getElementById('y').textContent = new Date().getFullYear();
+    $('#y').textContent = new Date().getFullYear();
     setLang('en');
     renderBlogList('en');
     window.addEventListener('hashchange', route);
+
+    // Helpful console tip for image path issues
+    (function(){
+      const img = document.getElementById('hero-photo');
+      img.addEventListener('error',()=>{
+        console.warn('Hero image failed to load. Check that IMG_1471.jpeg exists in repo root and the filename (including case) matches exactly.');
+      });
+    })();
   </script>
 </body>
 </html>
