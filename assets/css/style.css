@@ -1,40 +1,35 @@
 /*
-  Özel stil dosyası
+  Özelleştirilmiş stil dosyası
 
-  Bu dosya, Cem Aksoy'un kişisel web sitesinin yeni temasını uygular.
-  Tasarım, siyah bir üst navigasyon paneli ve açık renkli bir sayfa
-  arka planı üzerine kuruludur. Vurgu olarak koyu yeşil tonları
-  kullanılır. Genel arka plan beyazımsı bir desenle zenginleştirilir.
-
-  Renk değişkenleri ve temel tipografi ayarları bir araya getirilmiş,
-  sitenin hem masaüstü hem de mobil ortamlarda akıcı görünmesi
-  amaçlanmıştır.
+  Bu temada sade ve modern bir yaklaşım benimsenmiştir. Tüm site iki ana renk
+  etrafında şekillenir: siyah ve beyaz. Arka plan, mevcut depodaki fractal
+  desen görseli üzerine oturtulmuş olup, içerik kutucukları yarı saydam
+  siyah alanlar içerisinde gösterilir. Vurgu renkleri olarak beyaz ve gri
+  tonları kullanılır. Tasarım, mobil ve masaüstü ekranlarda esnek biçimde
+  çalışacak şekilde hazırlanmıştır.
 */
 
-/* Renk değişkenleri */
+/* Renk ve temel değişkenler */
 :root {
-  /* Üst gezinti panelinin arka planı – neredeyse siyah */
-  --header-bg: #0c0d0f;
-  /* Sayfa arka planı – çok açık gri/beyaz */
-  --body-bg: #f7f8fa;
-  /* Desen görselinin yolu
-     GitHub deposunda desen kök dizinde (coolbackgrounds-fractalize-bleach.png) bulunduğundan,
-     CSS dosyasının konumuna göre iki klasör yukarı çıkılmalıdır. */
+  /* Üst gezinti paneli ve footer arka planı */
+  --header-bg: #000000;
+  /* Gövde arka planı */
+  --body-bg: #000000;
+  /* Desen görselinin yolu (depo kök dizininde bulunur) */
   --pattern: url('../../coolbackgrounds-fractalize-bleach.png');
-  /* Birincil vurgu rengi – koyu yeşil */
-  --primary: #0f8f6a;
-  /* İkincil vurgu rengi – orta yeşil */
-  --secondary: #23a178;
-  /* Koyu metin rengi */
-  --text-dark: #0f172a;
-  /* Açık metin rengi */
-  --text-light: #f5f5f5;
-  /* Açık yüzey rengi kartlar için */
-  --surface: #ffffff;
-  /* Alternatif yüzey – çok açık gri */
-  --surface-alt: #f1f5f9;
+  /* Birincil vurgu rengi – beyaz */
+  --primary: #ffffff;
+  /* İkincil vurgu rengi – nötr gri */
+  --secondary: #888888;
+  /* Metin renkleri (hem koyu hem açık öğeler için beyaz kullanıyoruz) */
+  --text-dark: #ffffff;
+  --text-light: #ffffff;
+  /* Kart yüzeyleri için yarı saydam siyah */
+  --surface: rgba(0, 0, 0, 0.75);
+  --surface-alt: rgba(0, 0, 0, 0.85);
 }
 
+/* Genel sıfırlamalar */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -42,7 +37,7 @@
 }
 
 body {
-  font-family: 'Poppins', 'Roboto', sans-serif;
+  font-family: 'Poppins', sans-serif;
   background-color: var(--body-bg);
   background-image: var(--pattern);
   background-size: cover;
@@ -66,7 +61,7 @@ header {
   width: 100%;
   background-color: var(--header-bg);
   color: var(--text-light);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   z-index: 100;
 }
 
@@ -77,24 +72,25 @@ header .header-inner {
   justify-content: space-between;
 }
 
-/* Marka ve slogan */
 .branding {
   display: flex;
   align-items: center;
 }
 
 .logo-icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  /* Küçük logoyu kullanıcının yüz fotoğrafıyla dolduruyoruz */
   width: 42px;
   height: 42px;
-  background: var(--primary);
-  color: var(--text-light);
   border-radius: 50%;
-  font-weight: 600;
-  font-size: 1.1rem;
+  border: 4px solid #000;
+  /* Bağlam: CSS dosyası assets/css içinde, bu nedenle kök dizine ulaşmak için iki kez çıkıyoruz */
+  /* Profil fotoğrafı: GitHub deposundaki profile.jpg dosyasını uzak olarak kullanıyoruz */
+  background-image: url('https://raw.githubusercontent.com/aksoycem/aksoycem.github.io/main/assets/profile.jpg');
+  background-size: 160%;
+  background-position: center;
+  background-repeat: no-repeat;
   margin-right: 0.8rem;
+  display: inline-block;
 }
 
 .branding-text {
@@ -105,12 +101,12 @@ header .header-inner {
 .branding-text .site-title {
   font-size: 1.4rem;
   font-weight: 600;
-  color: var(--text-light);
+  color: var(--primary);
 }
 
 .branding-text .tagline {
   font-size: 0.8rem;
-  color: rgba(245, 245, 245, 0.8);
+  color: var(--secondary);
 }
 
 /* Navigasyon menüsü */
@@ -120,7 +116,7 @@ header nav ul {
 }
 
 header nav ul li a {
-  color: var(--text-light);
+  color: var(--primary);
   text-decoration: none;
   padding: 0 15px;
   font-size: 0.95rem;
@@ -151,15 +147,16 @@ header nav ul li a:focus {
 
 .language-selector .lang.active {
   background-color: var(--secondary);
-  color: var(--text-light);
+  color: var(--header-bg);
 }
 
-/* Mobil menü düğmesi (hamburger) */
+/* Mobil menü düğmesi */
 .menu-toggle {
   display: none;
   flex-direction: column;
   cursor: pointer;
 }
+
 .menu-toggle span {
   width: 25px;
   height: 2px;
@@ -194,8 +191,8 @@ header nav ul li a:focus {
   height: auto;
   border-radius: 50%;
   object-fit: cover;
-  border: 4px solid var(--primary);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  border: 4px solid #000;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
 }
 
 .hero-text {
@@ -203,37 +200,48 @@ header nav ul li a:focus {
   max-width: 500px;
 }
 
+/* Küçük yuvarlak resim ikonları (örneğin hero başlığının sonundaki Dubai fotoğrafı) */
+.tagline-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 4px solid #000;
+  object-fit: cover;
+  margin-left: 0.5rem;
+  vertical-align: middle;
+}
+
 .hero-text h1 {
-  font-size: 2.5rem;
-  color: var(--primary);
+  font-size: 2.2rem;
   margin-bottom: 1rem;
+  color: var(--primary);
 }
 
 .hero-text p {
   font-size: 1.1rem;
   margin-bottom: 1.5rem;
-  color: var(--text-dark);
-  opacity: 0.85;
+  color: var(--secondary);
 }
 
 .btn {
-  display: inline-block;
-  padding: 0.75rem 1.75rem;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.75rem 1.5rem;
   background: var(--primary);
-  color: var(--text-light);
+  color: var(--header-bg);
   border-radius: 4px;
   text-decoration: none;
   font-weight: 500;
-  transition: background 0.35s ease, transform 0.35s ease;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 .btn:hover,
 .btn:focus {
   background: var(--secondary);
-  transform: translateY(-2px);
+  color: var(--header-bg);
 }
 
-/* Genel bölümler */
+/* Genel bölüm düzeni */
 .section {
   padding: 4rem 0;
 }
@@ -245,92 +253,74 @@ header nav ul li a:focus {
 }
 
 .section h3 {
-  font-size: 1.3rem;
-  margin-top: 1.5rem;
-  margin-bottom: 0.75rem;
+  font-size: 1.2rem;
+  margin-bottom: 0.8rem;
   color: var(--secondary);
 }
 
 .section p {
+  font-size: 1rem;
   margin-bottom: 1rem;
-  font-size: 0.95rem;
   opacity: 0.9;
-  color: var(--text-dark);
 }
 
-.section.alternate {
-  background-color: var(--surface-alt);
-}
-
-/* Projeler ve deneyimler gridleri */
-.projects-grid, .experiences-grid, .blog-grid {
+/* Grid yapıları */
+.projects-grid,
+.experiences-grid,
+.skills-grid,
+.blog-grid,
+.values-grid,
+.gallery-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
   margin-top: 2rem;
 }
 
-.project-card, .experience-card, .blog-card {
+/* Kartlar */
+.project-card,
+.experience-card,
+.skill-category,
+.value-card,
+.blog-card {
   background: var(--surface);
   padding: 1.5rem;
   border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   word-break: break-word;
 }
 
-/* Blog kartlarının içindeki resimler */
-.blog-card img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  border: 4px solid var(--primary);
-  margin-bottom: 1rem;
-  object-fit: cover;
-}
-
 .project-card:hover,
 .experience-card:hover,
+.skill-category:hover,
+.value-card:hover,
 .blog-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
 }
 
+/* Kart başlıkları */
 .project-card h3,
 .experience-card h3,
+.skill-category h3,
+.value-card h3,
 .blog-card h3 {
   margin-bottom: 0.5rem;
   color: var(--secondary);
 }
 
-.project-card p,
-.experience-card p,
-.blog-card p {
-  font-size: 0.9rem;
-  opacity: 0.85;
-}
-
-/* Beceriler */
-.skills-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  margin-top: 2rem;
-}
-
-.skill-category {
-  flex: 1 1 250px;
-  background: var(--surface);
-  padding: 1.5rem;
+/* Kart resimleri */
+.blog-card img {
+  width: 100%;
+  height: auto;
   border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  border: 4px solid #000;
+  margin-bottom: 1rem;
+  object-fit: cover;
 }
 
-.skill-category h3 {
-  margin-bottom: 0.75rem;
-  color: var(--secondary);
-}
-
+/* Beceriler listesi */
 .skill-category ul {
   list-style: square inside;
   padding-left: 1rem;
@@ -340,7 +330,7 @@ header nav ul li a:focus {
   margin-bottom: 0.5rem;
 }
 
-/* İletişim */
+/* İletişim butonları ve ikon bağlantıları */
 .contact-links {
   display: flex;
   flex-wrap: wrap;
@@ -355,11 +345,11 @@ header nav ul li a:focus {
   align-items: center;
   padding: 0.75rem 1.25rem;
   background: var(--primary);
-  color: var(--text-light);
+  color: var(--header-bg);
   border-radius: 4px;
   text-decoration: none;
   font-weight: 500;
-  transition: background 0.3s ease;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 .contact-btn:hover,
@@ -367,8 +357,10 @@ header nav ul li a:focus {
 .contact-btn:focus,
 .icon-link:focus {
   background: var(--secondary);
+  color: var(--header-bg);
 }
 
+/* İkon rengi */
 .icon-link .icon {
   display: flex;
   align-items: center;
@@ -381,17 +373,26 @@ header nav ul li a:focus {
   fill: currentColor;
 }
 
+/* Galeri görselleri */
+.gallery-grid img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  border: 4px solid #000;
+  object-fit: cover;
+}
+
 /* Footer */
 footer {
   background-color: var(--header-bg);
   padding: 2rem 0;
   text-align: center;
   font-size: 0.85rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 footer p {
-  color: var(--text-light);
+  color: var(--secondary);
   opacity: 0.8;
 }
 
@@ -438,8 +439,10 @@ footer p {
   /* Hero responsive */
   .hero-container {
     flex-direction: column;
+    text-align: center;
   }
-  .hero-image, .hero-text {
+  .hero-image,
+  .hero-text {
     max-width: 100%;
     text-align: center;
   }
