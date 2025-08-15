@@ -1,0 +1,368 @@
+/*
+  Ana stil dosyası
+  Bu dosya, Cem Aksoy'un kişisel web sitesi için karanlık ve modern bir tema uygular.
+*/
+
+/*
+  Temel renk değişkenleri artık ChatGPT'nin karanlık temasına benzer,
+  koyu lacivert ve koyu yeşil tonları kullanır. Bu sayede sayfa,
+  çağdaş sohbet uygulamalarının karanlık görünümüne yaklaşır ve
+  Power Apps tarzında modern bir his verir.  
+*/
+:root {
+  /* Ana arka plan rengi, neredeyse siyah ama mavi alt tona sahip bir gri */
+  --background: #202123;
+  /* Alternatif yüzey rengi, bölümler arasında hafif kontrast sağlar */
+  --surface: #1e1f24;
+  /* Birincil vurgu rengi, enerjik koyu yeşil */
+  --primary: #10b981;
+  /* İkincil vurgu rengi, bir ton daha açık yeşil */
+  --accent: #22c55e;
+  /* Metin rengi, yumuşak beyaz */
+  --text: #f5f7fa;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', 'Roboto', sans-serif;
+  background-color: var(--background);
+  color: var(--text);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Header */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(13, 27, 42, 0.9);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  z-index: 100;
+  backdrop-filter: blur(10px);
+}
+
+header .container {
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .logo {
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: var(--primary);
+  letter-spacing: 0.5px;
+}
+
+header nav ul {
+  display: flex;
+  list-style: none;
+}
+
+header nav ul li a {
+  color: var(--text);
+  text-decoration: none;
+  padding: 0 15px;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+header nav ul li a:hover,
+header nav ul li a:focus {
+  color: var(--primary);
+}
+
+/* Mobile menu toggle */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  width: 25px;
+  height: 2px;
+  background: var(--text);
+  margin: 4px 0;
+  transition: all 0.4s ease;
+}
+
+/* Hero Section */
+#hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  /* Düz arka plan; hero resmi kaldırıldı */
+  background-color: var(--background);
+  background-image: none;
+}
+
+/* Hero overlay kaldırıldı, artık kullanılmıyor */
+
+#hero .hero-content {
+  position: relative;
+  z-index: 1;
+  padding: 0 1rem;
+}
+
+#hero h1 {
+  font-size: 3.5rem;
+  color: var(--primary);
+  letter-spacing: 1.5px;
+  margin-bottom: 0.5rem;
+}
+
+#hero p {
+  margin-top: 0.5rem;
+  font-size: 1.25rem;
+  color: var(--text);
+  opacity: 0.9;
+}
+
+/* Genel buton stilleri */
+.btn {
+  margin-top: 2rem;
+  display: inline-block;
+  padding: 0.75rem 1.75rem;
+  background: var(--primary);
+  color: #fff;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.35s ease, transform 0.35s ease;
+}
+
+.btn:hover,
+.btn:focus {
+  background: var(--accent);
+  transform: translateY(-2px);
+}
+
+/* Sections */
+.section {
+  padding: 4rem 0;
+}
+
+.section.alternate {
+  background-color: var(--surface);
+}
+
+.section h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: var(--primary);
+}
+
+.section h3 {
+  font-size: 1.3rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  color: var(--accent);
+}
+
+.section p {
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+/* Projects */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.project-card {
+  background: rgba(255, 255, 255, 0.04);
+  padding: 1.5rem;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  /* Uzun kelimelerin kart sınırlarını aşmasını engelle */
+  word-break: break-word;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.project-card h3 {
+  margin-bottom: 0.5rem;
+  color: var(--accent);
+}
+
+.project-card p {
+  font-size: 0.9rem;
+  opacity: 0.85;
+}
+
+/* Skills */
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.skill-category {
+  flex: 1 1 250px;
+  background: rgba(255, 255, 255, 0.04);
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+.skill-category h3 {
+  margin-bottom: 0.75rem;
+  color: var(--accent);
+}
+
+.skill-category ul {
+  list-style: square inside;
+  padding-left: 1rem;
+}
+
+.skill-category li {
+  margin-bottom: 0.5rem;
+}
+
+/* Values */
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.value-card {
+  background: rgba(255, 255, 255, 0.04);
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+.value-card h3 {
+  margin-bottom: 0.5rem;
+  color: var(--accent);
+}
+
+.value-card p {
+  font-size: 0.9rem;
+  opacity: 0.85;
+}
+
+/* Contact */
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.contact-btn,
+.icon-link {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.75rem 1.25rem;
+  background: var(--primary);
+  color: #fff;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+
+.contact-btn:hover,
+.icon-link:hover,
+.contact-btn:focus,
+.icon-link:focus {
+  background: var(--accent);
+}
+
+.icon-link .icon {
+  display: flex;
+  align-items: center;
+  margin-right: 0.5rem;
+}
+
+.icon-link svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+/* Footer */
+footer {
+  background-color: var(--surface);
+  padding: 2rem 0;
+  text-align: center;
+  font-size: 0.85rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+footer p {
+  color: var(--text);
+  opacity: 0.8;
+}
+
+/*
+  Reveal animasyonları: Bölümler ilk yüklendiğinde veya kaydırıldığında
+  yavaşça görünmeleri için kullanılır. 'reveal' sınıfını JS ile
+  bölümlere ekleyip çıkartacağız.
+*/
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive navigation */
+@media (max-width: 768px) {
+  header nav {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: rgba(13, 27, 42, 0.95);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+  }
+  header nav.open {
+    max-height: 320px;
+  }
+  header nav ul {
+    flex-direction: column;
+    padding: 1rem 0;
+  }
+  header nav ul li a {
+    padding: 0.5rem 1rem;
+  }
+  .menu-toggle {
+    display: flex;
+  }
+}
