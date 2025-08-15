@@ -1,1 +1,0 @@
-# aksoycem.github.io
