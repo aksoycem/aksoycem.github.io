@@ -25,23 +25,24 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "20"
-          cache: "npm"
+          check-latest: true
+          # ❌ cache satırı kaldırıldı: cache: "npm"
 
       - name: Install deps
-        run: npm install
+        run: npm install --no-audit --no-fund
 
       - name: Build (next export) for USER SITE
         env:
-          # User-site: basePath/assetPrefix YOK
-          GITHUB_PAGES: "false"
+          GITHUB_PAGES: "false"     # user-site: basePath yok
           NEXT_PUBLIC_REPO_NAME: ""
-        run: npm run build   # package.json: "build": "next build && next export"
+        run: npm run build          # package.json: "next build && next export"
 
       - name: Write CNAME & .nojekyll
         run: |
           mkdir -p out
           echo "cemaksoy.net" > out/CNAME
           touch out/.nojekyll
+          ls -la out
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
