@@ -21,7 +21,7 @@
     }
     *{box-sizing:border-box}
     html,body{height:100%}
-    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--fg);background:var(--bg);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--fg);background:linear-gradient(135deg, #f8f9fa 0%, #e2e8f0 100%);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
     a{color:inherit;text-decoration:none}
     img{max-width:100%;display:block}
     .container{max-width:1100px;margin:0 auto;padding:0 20px}
@@ -32,8 +32,9 @@
     .brand{display:flex;gap:12px;align-items:center;font-weight:700;letter-spacing:.2px}
     .brand .dot{width:10px;height:10px;border-radius:50%;background:var(--fg)}
     .navlinks{display:flex;gap:14px;align-items:center;}
-    .navlinks a{padding:10px 14px;border-radius:12px;transition:transform .2s ease, background .2s ease}
-    .navlinks a:hover{background:var(--card);transform:translateY(-1px)}
+    .navlinks a{padding:10px 14px;border-radius:12px;transition:transform .2s ease, background .2s ease, color .2s ease, box-shadow .2s ease}
+    .navlinks a:hover{background:var(--card);transform:translateY(-1px);box-shadow:0 4px 12px rgba(0,0,0,.08)}
+    .navlinks a.active{background:#111;color:#fff;box-shadow:0 4px 12px rgba(0,0,0,.15)}
 
     .lang{display:flex;gap:10px;padding:6px;border-radius:999px;background:var(--card);
       border:1px solid rgba(0,0,0,.06);box-shadow:var(--shadow)}
@@ -50,7 +51,7 @@
     .btn:hover{transform:translateY(-1px);box-shadow:0 10px 25px rgba(0,0,0,.2)}
     .btn.ghost{background:transparent;color:#111}
 
-    .hero-card{position:relative;border-radius:var(--radius-lg);overflow:hidden;border:1px solid rgba(0,0,0,.08);background:linear-gradient(180deg,#fdfdfd, #f5f5f7)}
+    .hero-card{position:relative;border-radius:var(--radius-lg);overflow:hidden;border:1px solid rgba(0,0,0,.08);background:linear-gradient(180deg,#fdfdfd, #f5f5f7);animation:floating 3s ease-in-out infinite}
     .hero-card .frame{aspect-ratio:1/1;}
     .hero-card img{width:100%;height:100%;object-fit:cover;transform:scale(1.005);transition:transform .6s ease}
     .hero-card:hover img{transform:scale(1.02)}
@@ -58,7 +59,8 @@
 
     section{padding:52px 0}
     .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:18px}
-    .card{grid-column:1 / -1;background:var(--card);border:1px solid rgba(0,0,0,.06);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
+    .card{grid-column:1 / -1;background:var(--card);border:1px solid rgba(0,0,0,.06);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow);transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease}
+    .card:hover{transform:translateY(-4px);box-shadow:0 16px 35px rgba(0,0,0,.08);border-color:rgba(0,0,0,.12)}
     .card h3{margin:0 0 10px}
     .two{grid-column:span 6}
     .three{grid-column:span 4}
@@ -82,11 +84,12 @@
       .three{grid-column:1/-1}
     }
 
-    .fade-in{opacity:0;transform:translateY(8px);animation:fade .6s ease forwards}
+    .fade-in{opacity:0;transform:translateY(8px);}
+    .fade-in-visible{animation:fade .6s ease forwards}
     .fade-in.delay-1{animation-delay:.1s}
     .fade-in.delay-2{animation-delay:.2s}
     .fade-in.delay-3{animation-delay:.3s}
-    @keyframes fade{to{opacity:1;transform:none}}
+    @keyframes floating{0%,100%{transform:translateY(0)} 50%{transform:translateY(-6px)}}
   </style>
 </head>
 <body>
@@ -427,9 +430,27 @@
       $('#foot-note').textContent = lang==='en'
         ? 'Built with clean HTML/CSS/JS • Minimal & fast'
         : 'Teknoloji liderliği: net hedef, temiz sistem, ölçülebilir etki.';
+      // Restart typewriter effect
+      startTypewriter(lang);
     }
 
-    $$('.lang button').forEach(btn=>btn.addEventListener('click', ()=> setLang(btn.getAttribute('data-lang'))));
+    function startTypewriter(lang){
+      const lede = $('.lede');
+      const text = i18n[lang]?.hero_lede || i18n.en.hero_lede;
+      lede.textContent = '';
+      lede.style.width = '0';
+      lede.style.borderRight = '2px solid var(--primary)';
+      let i = 0;
+      const timer = setInterval(() => {
+        if (i < text.length) {
+          lede.textContent += text.charAt(i);
+          i++;
+        } else {
+          clearInterval(timer);
+          setTimeout(() => lede.style.borderRight = 'none', 500);
+        }
+      }, 50);
+    }
 
     const sections = ['about','experience','project','skills','certs','blog','contact'];
     const obs = new IntersectionObserver(entries=>{
@@ -442,9 +463,20 @@
     },{rootMargin:'-50% 0px -45% 0px', threshold:0});
     sections.forEach(id=>{ const el = document.getElementById(id); if(el) obs.observe(el); });
 
+    const revealObserver = new IntersectionObserver(entries=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          entry.target.classList.add('fade-in-visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    },{threshold:0.15});
+    $$('.fade-in').forEach(el=>revealObserver.observe(el));
+
     $('#y').textContent = new Date().getFullYear();
     setLang('en');
     renderBlogList('en');
+    startTypewriter('en');
     window.addEventListener('hashchange', route);
 
     // Helpful console tip for image path issues
