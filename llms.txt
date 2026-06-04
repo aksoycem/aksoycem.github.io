@@ -1,0 +1,50 @@
+# Cem Aksoy
+
+> Cem Aksoy is a Software Engineer and Digital Craftsman based in İstanbul, Türkiye. He has startup co-founding experience, two published iOS apps, and hands-on roles across software development, AI enablement, and business automation. Personal website: https://cemaksoy.net
+
+## About
+
+- Name: Cem Aksoy
+- Role: Software Engineer / Junior Software Developer / Software Engineering Student
+- Location: İstanbul, Türkiye
+- Education: B.E. Software Engineering, Bahçeşehir University (2022–2026)
+- Focus areas: iOS development (Swift), web development (React, Next.js, TypeScript), generative AI enablement, and business process automation (Microsoft Power Platform / Power Apps / Power Automate)
+- Languages & tools: Java, Python, Dart, PHP, C#, SQL, Flutter, Firebase, WordPress, REST APIs, Power Platform, Git, Jira, Agile/Scrum
+
+## Projects
+
+- SeaIntel (Sea Intelligence) — Founder. A web platform that turns maritime and operational data into actionable intelligence. https://seaintel.co
+- The Calm Sun — iOS app currently in active development (Swift), design-first, calm user experience.
+- Ajan — Social party (spy-style) game published on the App Store; built for iOS in Swift.
+- Optimal — iOS app that automates credit card statement and billing-cycle reminders; published on the App Store.
+- Turkon Holding — Led generative-AI training sessions and designed Power Apps / Power Platform automations for reminders, approvals, and operational communication.
+- reSort — Co-developed an award-recognized smart recycling system approved by the Europe Education and Research Institute.
+
+## Experience
+
+- 2026 — Technology Partner (Grower, former product)
+- 2025 — Innovation & Management Intern, Turkon Holding
+- 2025 — Junior Software Developer, makeSOsimple
+- 2023 — Software Development & IT Intern, Kidu (Sabancı Center)
+- 2022 — Business Development, Erez Kalıp Makina Müh.
+- 2021 — Stadium Operations & VIP Coordinator, Beşiktaş JK
+
+## Certifications
+
+Cem Aksoy holds 15 verifiable certifications across AI, cloud, cybersecurity, networking, and software engineering. Each has a public verification page at https://cemaksoy.net/verify/<credential-id>/. Highlights include:
+
+- Google Cloud Generative AI Leader (Google Cloud, 2026)
+- GPT-5 for Builders (OpenAI Academy, 2026)
+- Claude Code in Action (Anthropic Academy, 2026)
+- Artificial Intelligence: Implications for Business Strategy (MIT Sloan Executive Education, 2025)
+- Google IT Support Specialization (Google / Coursera, 2024)
+- CyberOps Associate (Cisco, 2023)
+- Cyber Security Analyst (Akbank, 2023)
+- Scientific Computing with Python (freeCodeCamp, 2023)
+
+## Contact
+
+- Website: https://cemaksoy.net
+- Email: cem.aksoy1@bahcesehir.edu.tr
+- LinkedIn: https://www.linkedin.com/in/cemaksoyy
+- GitHub: https://github.com/aksoycem
